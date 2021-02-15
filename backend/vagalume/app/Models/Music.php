@@ -10,6 +10,8 @@ class Music extends Model
 {
     use HasFactory;
 
+    protected $table = "musics";
+
     public function saveMusic (Request $request){
         $this->title = $request->title;
         $this->url = $request->url;
