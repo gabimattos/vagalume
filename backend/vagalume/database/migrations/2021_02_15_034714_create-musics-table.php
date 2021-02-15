@@ -16,7 +16,7 @@ class CreateMusicsTable extends Migration
         Schema::create('musics', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('url')->unique();
+            $table->string('url');
             $table->timestamps();
         });
     }
