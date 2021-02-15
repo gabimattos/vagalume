@@ -13,7 +13,12 @@ class CreateMusicsTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('musics', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->string('url')->unique();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +28,6 @@ class CreateMusicsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('musics');
     }
 }
