@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MusicController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('musics', [MusicController::class, 'index']);
+Route::get('musics/{id}', [MusicController::class, 'show']);
+Route::post('musics', [MusicController::class, 'create']);
+Route::put('musics/{id}', [MusicController::class, 'update']);
+Route::delete('musics/{id}', [MusicController::class, 'delete']);
