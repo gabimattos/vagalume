@@ -13,7 +13,11 @@ class CreateArtistsTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('artists', function (Blueprint $table) {
+            $table->id();
+            $table->string("name");
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +27,6 @@ class CreateArtistsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('artists');
     }
 }
