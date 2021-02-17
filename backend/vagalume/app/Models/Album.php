@@ -25,4 +25,8 @@ class Album extends Model
         }
         $this->save();
     }
+
+    public function artist(){
+        return $this->belongsTo('App\Models\Artist');
+    }
 }

@@ -15,11 +15,16 @@ class CreateAlbumsTable extends Migration
     {
         Schema::create('albums', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('artist_id')->nullable();
             $table->string('title');
             $table->string('url');
             $table->integer('year');
             $table->string('label');
             $table->timestamps();
+        });
+
+        Schema::table('albums', function (Blueprint $table) {
+            $table->foreign('artist_id')->references('id')->on('artists')->onDelete('set null');
         });
     }
 
