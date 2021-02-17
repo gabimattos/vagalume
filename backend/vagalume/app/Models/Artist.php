@@ -21,4 +21,8 @@ class Artist extends Model
         }
         $this->save();
     }
+
+    public function albums(){
+        return $this->hasMany('App\Models\Album');
+    }
 }
