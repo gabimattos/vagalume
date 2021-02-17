@@ -24,4 +24,8 @@ class Music extends Model
         }
         $this->save();
     }
+
+    public function album(){
+        return $this->belongsTo('App\Models\Album');
+    }
 }
