@@ -23,6 +23,7 @@ class CreateMusicsTable extends Migration
 
         Schema::table('musics', function (Blueprint $table){
             $table->foreign('artist_id')->references('id')->on('artists')->onDelete('set null');
+            $table->foreign('album_id')->references('id')->on('albums')->onDelete('set null');
         })
     }
 
