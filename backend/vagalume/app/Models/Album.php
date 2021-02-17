@@ -15,6 +15,7 @@ class Album extends Model
         $this->url = $request->url;
         $this->year = $request->year;
         $this->label = $request->label;
+        $this->artist_id = $request->artist_id;
         
         $this->save();
     }
