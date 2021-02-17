@@ -21,12 +21,11 @@ class CreateMusicsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('musics', function (Blueprint $table){
+        Schema::table('musics', function (Blueprint $table) {
             $table->foreign('artist_id')->references('id')->on('artists')->onDelete('set null');
             $table->foreign('album_id')->references('id')->on('albums')->onDelete('set null');
-        })
+        });
     }
-
     /**
      * Reverse the migrations.
      *
