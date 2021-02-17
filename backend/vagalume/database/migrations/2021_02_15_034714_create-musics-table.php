@@ -17,8 +17,13 @@ class CreateMusicsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('url');
+            $table->string('band');
             $table->timestamps();
         });
+
+        Schema::table('musics', function (Blueprint $table){
+            $table->foreign('artist_id')->references('id')->on('artists')->onDelete('set null');
+        })
     }
 
     /**
