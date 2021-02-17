@@ -13,6 +13,7 @@ class AlbumController extends Controller
         $album -> url = $request->url;
         $album -> year = $request->year;
         $album -> label = $request->label;
+        $album -> artist_id = $request->artist_id;
         $album -> save();
         return response()->json(['album' => $album], 200);
     }
