@@ -15,6 +15,7 @@ class Music extends Model
     public function saveMusic (Request $request){
         $this->title = $request->title;
         $this->url = $request->url;
+        $this->album_id = $request->album_id;
         $this->save();
     }
 
@@ -23,5 +24,9 @@ class Music extends Model
             $this->title = $request->title;
         }
         $this->save();
+    }
+
+    public function album(){
+        return $this->belongsTo('App\Models\Album');
     }
 }
