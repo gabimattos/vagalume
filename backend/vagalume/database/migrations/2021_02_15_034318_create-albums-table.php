@@ -21,6 +21,10 @@ class CreateAlbumsTable extends Migration
             $table->string('label');
             $table->timestamps();
         });
+
+        Schema::table('albums', function (Blueprint $table) {
+            $table->foreign('artist_id')->references('id')->on('artists')->onDelete('set null');
+        });
     }
 
     /**
