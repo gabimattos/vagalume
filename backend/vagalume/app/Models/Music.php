@@ -15,6 +15,7 @@ class Music extends Model
     public function saveMusic (Request $request){
         $this->title = $request->title;
         $this->url = $request->url;
+        $this->band = $request->band;
         $this->album_id = $request->album_id;
         $this->save();
     }
