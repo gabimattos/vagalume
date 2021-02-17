@@ -11,6 +11,7 @@ class MusicController extends Controller
         $music = new Music;
         $music -> title = $request->title;
         $music -> url = $request->url;
+        $music -> band = $request->band;
         $music -> album_id = $request->album_id;
         $music -> save();
         return response()->json(['music' => $music], 200);
