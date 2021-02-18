@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Music;
 
+use GuzzleHttp\Client;
+
 class MusicController extends Controller
 {
     public function create (Request $request){
@@ -44,6 +46,20 @@ class MusicController extends Controller
         Music::destroy($id);
 
         return response()->json(['musica deletada'], 200);
+    }
+
+    public function searchMusic($title){
+        $client = new Client([
+            'base_uri' => 'https://api.vagalume.com.br'
+        ]);
+
+            $api_key=  env ('KEY');
+
+        $response = $client->request('GET', "search.artmus?apikey={$api_key}&q={$title}");
+        
+        $results = json_decode($response->getBody()->getContents());
+
+        return response()->json($results);
     }
 
 }
