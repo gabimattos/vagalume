@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Artist;
 
+use GuzzleHttp\Client;
+
 class ArtistController extends Controller
 {
     public function create (Request $request){
@@ -40,26 +42,18 @@ class ArtistController extends Controller
         return response()->json(['artista deletado'], 200);
     }
 
-    /*
-    Relacionamento 1-N entre artista e albuns.
-    1 Artista tem N albuns, mas 1 álbum pertence a apenas 1 artista.
+    public function searchArtist($name){
+        $client = new Client([
+            'base_uri' => 'https://api.vagalume.com.br'
+        ]);
 
-    public function createAlbum($id, $album_id){
-        $artist = Artist::findOrFail($id);
-        $album = Album::findOrFail($album_id);
-        $artist->album_id = $album_id;
-        $artist->save();
-        return response()->json($artist);
+            $api_key=  env ('KEY');
+
+        $response = $client->request('GET', "search.art?apikey={$api_key}&q={$name}");
+        
+        $results = json_decode($response->getBody()->getContents());
+
+        return response()->json($results);
     }
-
-    public function deleteAlbum(%id, $album_id){
-        $artist = Artist::findOrFail($id);
-        $album = Album::findOrFail($album_id);
-        $artist->album_id = NULL;
-        $artist->save();
-        return response()->json($artist);
-    }
-    */
-
 
 }
