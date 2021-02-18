@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Album;
 
+use GuzzleHttp\Client;
+
 class AlbumController extends Controller
 {
     public function create (Request $request){
@@ -51,5 +53,19 @@ class AlbumController extends Controller
         Album::destroy($id);
 
         return response()->json(['album deletado'], 200);
+    }
+
+    public function searchAlbum($title){
+        $client = new Client([
+            'base_uri' => 'https://api.vagalume.com.br'
+        ]);
+
+            $api_key=  env ('KEY');
+
+        $response = $client->request('GET', "search.alb?apikey={$api_key}&q={$title}");
+        
+        $results = json_decode($response->getBody()->getContents());
+
+        return response()->json($results);
     }
 }

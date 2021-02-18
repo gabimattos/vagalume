@@ -23,6 +23,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('albums', [AlbumController::class, 'index']);
 Route::get('albums/{id}', [AlbumController::class, 'show']);
+Route::get('searchAlbums/{title}', [AlbumController::class, 'searchAlbum']);
 Route::post('albums', [AlbumController::class, 'create']);
 Route::put('albums/{id}', [AlbumController::class, 'update']);
 Route::delete('albums/{id}', [AlbumController::class, 'delete']);
