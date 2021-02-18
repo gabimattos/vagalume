@@ -29,6 +29,7 @@ Route::delete('albums/{id}', [AlbumController::class, 'delete']);
 
 Route::get('artists', [ArtistController::class, 'index']);
 Route::get('artists/{id}', [ArtistController::class, 'show']);
+Route::get('searchArtists/{name}', [ArtistController::class, 'searchArtist']);
 Route::post('artists', [ArtistController::class, 'create']);
 Route::put('artists/{id}', [ArtistController::class, 'update']);
 Route::delete('artists/{id}', [ArtistController::class, 'delete']);
