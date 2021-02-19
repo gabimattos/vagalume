@@ -37,11 +37,10 @@ As entidades são: Album, Music e Artist.
 [Laravel](https://laravel.com/)
 
 ## API 
-<img src="/src/images/logo-vagalume.jpg">
-[Documentação da API](https://api.vagalume.com.br/) /
+[Site API Vagalume](https://api.vagalume.com.br/) /
 [Site Vagalume](https://www.vagalume.com.br/)
 
-(colocar imagem logo do vagalume)
+
 
 #### Sobre o Vagalume
 Lançado em 2002, o Vagalume é o maior portal de música do Brasil. Além de ser muito conhecido pelas letras de músicas organizadas e catalogadas no site, o Vagalume tem também um grande acervo de discografias, traduções, cifras, fotos, estilos musicais, notícias, informações de biografia sobre os artistas, medidor de popularidade, cálculo de proximidade musical (de músicas e artistas) e tempo de sincronização de legendas das músicas.
@@ -86,3 +85,4 @@ O phpMyAdmin é uma interface gráfica para manutenção de banco de dados com M
 
 ## Servir o Projeto
 ## Créditos
+
