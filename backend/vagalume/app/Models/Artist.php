@@ -12,6 +12,8 @@ class Artist extends Model
 
     public function saveArtist (Request $request){
         $this->name = $request->name;
+        $this->url = $request->url;
+        $this->genre = $request->genre;
         $this->save();
     }
 
