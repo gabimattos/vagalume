@@ -232,7 +232,7 @@ $ cp .env.example .env
 - Crie uma conta e colha uma credencial na [API Vagalume](https://auth.vagalume.com.br/settings/api/)
 - No arquivo .env adicione a linha a seguir:
 ```
-$ API_KEY = {sua credencial}
+$ KEY = {sua credencial}
 ```
 - Rode os comandos a seguir para gerar uma cheve, installar a passport e criar as tabelas:
 
