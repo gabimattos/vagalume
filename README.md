@@ -31,7 +31,7 @@ As entidades são: Album, Music e Artist.
 - Music pertence a 1 Album 
 
 
-(colocar uma foto da modelagem)
+![Modelagem](https://user-images.githubusercontent.com/50138800/108563695-9d2aca00-72e0-11eb-8be9-1d356a3e57d1.png)
 
 ## Tecnologias
 [Laravel](https://laravel.com/)
