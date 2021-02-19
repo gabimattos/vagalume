@@ -61,18 +61,6 @@ class MusicController extends Controller
         return response()->json(['musica deletada'], 200);
     }
 
-    public function searchMusic($title){
-        $client = new Client([
-            'base_uri' => 'https://api.vagalume.com.br'
-        ]);
-
-            $api_key=  env ('KEY');
-
-        $response = $client->request('GET', "search.artmus?apikey={$api_key}&q={$title}");
-        
-        $results = json_decode($response->getBody()->getContents());
-
-        return response()->json($results);
-    }
+ 
 
 }
