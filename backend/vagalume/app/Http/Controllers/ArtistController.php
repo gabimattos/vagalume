@@ -21,9 +21,20 @@ class ArtistController extends Controller
         return response()->json(['artists'=>$artists], 200);
     }
 
-    public function show ($id){
-        $artist = Artist::find($id);
-        return response()->json(['artist' => $artist], 200);
+    public function show ($name){
+        $artist = Artist::find($name);
+
+        $client = new Client([
+            'base_uri' => 'https://api.vagalume.com.br'
+        ]);
+
+            $api_key=  env ('KEY');
+
+        $response = $client->request('GET', "search.art?apikey={$api_key}&q={$name}");
+        
+        $results = json_decode($response->getBody()->getContents());
+
+        return response()->json($results);
     }
 
     public function update (Request $request, $id){
@@ -42,18 +53,6 @@ class ArtistController extends Controller
         return response()->json(['artista deletado'], 200);
     }
 
-    public function searchArtist($name){
-        $client = new Client([
-            'base_uri' => 'https://api.vagalume.com.br'
-        ]);
 
-        $api_key=  env('KEY');
-
-        $response = $client->request('GET', "search.art?apikey={$api_key}&q={$name}");
-        
-        $results = json_decode($response->getBody()->getContents());
-
-        return response()->json($results);
-    }
 
 }
