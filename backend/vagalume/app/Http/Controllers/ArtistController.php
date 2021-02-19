@@ -47,7 +47,7 @@ class ArtistController extends Controller
             'base_uri' => 'https://api.vagalume.com.br'
         ]);
 
-            $api_key=  env ('KEY');
+        $api_key=  env('KEY');
 
         $response = $client->request('GET', "search.art?apikey={$api_key}&q={$name}");
         

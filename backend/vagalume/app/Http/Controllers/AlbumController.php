@@ -60,7 +60,7 @@ class AlbumController extends Controller
             'base_uri' => 'https://api.vagalume.com.br'
         ]);
 
-            $api_key=  env ('KEY');
+        $api_key=  env('KEY');
 
         $response = $client->request('GET', "search.alb?apikey={$api_key}&q={$title}");
         
@@ -68,4 +68,6 @@ class AlbumController extends Controller
 
         return response()->json($results);
     }
+
+    // O Serviço dessa rota estava indisponível na ultima vez que testei
 }
