@@ -6,7 +6,7 @@
 - Modelagem
 - Tecnologias
 - API
-- Instalação
+- Ambiente de desenvolvimento
 - Servir o projeto
 - Créditos
 
@@ -55,7 +55,7 @@ Veja sobre o [Vagalume no Wikipedia](https://pt.wikipedia.org/wiki/Vagalume_(sit
 #### Sobre a API
 No Vagalume temos a performance como um dos itens mais importantes no desenvolvimento do sistema. Devido a grande quantidade de acessos no site, temos como prioridade o carregamento rápido e escalabilidade da aplicação. Utilizar as funções encontradas na API não devem deixar o seu site mais lento ou gerar problemas de estabilidade em nosso sistema. Nesta documentação devemos abordar as melhores práticas de como fazer requisições de forma assíncrona.
 
-## Ambiente
+## Ambiente de desenvolvimento
 ### Para Linux
 
 #### 1. Postman
@@ -84,6 +84,78 @@ O phpMyAdmin é uma interface gráfica para manutenção de banco de dados com M
 <br>Nome do Pacote: phpmyadimin
 <br>Para a instalação, em alguns sistemas Linux, o phpmyadimin terá uma tela de configuração específica.
 
-## Servir o Projeto
-## Créditos
+### Para Windows
 
+#### 1. Xampp
+O primeiro passo é a instalação do Xampp. O Xampp automaticamente instalará o php, mysql/mariaDB e Apache. Faça o download no link abaixo para a versão compatível com o laravel, a do php 7.1.30.
+[Download Xampp](https://www.apachefriends.org/download.html)
+
+#### 2. Composer
+[Download Composer](https://getcomposer.org/download/)
+
+#### 3. NodeJs
+[Download NodeJs](https://getcomposer.org/download/)
+
+#### 4. Git Bash
+[Download Git Bash](https://getcomposer.org/download/)
+
+#### 5. VSCode
+[Download VSCode](https://getcomposer.org/download/)
+
+### 6. Laravel
+Para instalar o Laravel é preciso executar o seguinte comando no git bash:
+composer global require laravel/installer
+
+### Verificando se o ambiente foi instalado corretamente:
+- node -v 
+- composer 
+- php -v 
+
+## Servir o Projeto
+
+- Clone o projeto
+```
+$ git clone https://github.com/gabimattos/vagalume.git
+```
+- Entre na pasta vagalume localizada em Vagalume/backend/vagalume e rode o seguinte comando:
+```
+$ git composer install
+```
+- Ligue o Xampp/Lampp
+- - Xampp
+Abra o Xampp e aperte START nas linhas "Apache" e "MySQL"
+
+- - Lampp 
+Rode o comando:
+```
+$ sudo /opt/lampp/lampp start
+```
+- Crie um banco de dados no phpMyAdmin
+- Na pasta 'vagalume', copie o arquivo .env.example e renomeie essa cópia com o nome .env e rode o seguinte comando:
+```
+$ cp .env.example .env
+```
+- Novamente na pasta 'vagalume' abra o arquivo .env e no campo 'DATABASE' altere de 'laravel' para o nome do banco de dados criado no phpMyAdmin.
+- Crie uma conta e colha uma credencial na [API Vagalume](https://auth.vagalume.com.br/settings/api/)
+- No arquivo .env adicione a linha a seguir:
+```
+$ API_KEY = {sua credencial}
+```
+- Rode os comandos a seguir para gerar uma cheve, installar a passport e criar as tabelas:
+
+```
+$ php artisan key:generate
+$ php artisan passport:install
+$ php artisan migrate
+```
+- Para servir o projeto rode o comando:
+```
+$ php artisan serve
+```
+OBS: A URL de acesso aparece no terminal após rodar o comando acima.
+
+- As rotas se encontram dentro da pasta 'vagalume' no arquivo api.php.
+Para testar as rotas usamos a URL localhost:8000/nome-da-rota
+
+## Créditos
+Gostaria de agradecer a Nayara Gomes e Mileny Loyolla por toda a ajuda e apoio ao longo de todo processo da execução do trabalho. Também gostaria de agradecer ao Danilo Collares e a EJCM, pois me baseei no slide "Ambiente Dev no Linux" para dar as melhores orientações de instalação de todo o ambiente no Linux e no documento "Guia de Instalação do Ambiente de Desenvolvimento - Windows" disponibilizado pela EJCM para dar as melhores orientações de instalação de todo o ambiente no Windows.
