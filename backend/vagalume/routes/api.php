@@ -35,8 +35,7 @@ Route::put('artists/{id}', [ArtistController::class, 'update']);
 Route::delete('artists/{id}', [ArtistController::class, 'delete']);
 
 Route::get('musics', [MusicController::class, 'index']);
-Route::get('musics/{id}', [MusicController::class, 'show']);
-Route::get('searchMusics/{title}', [MusicController::class, 'searchMusic']);
+Route::get('musics/{title}', [MusicController::class, 'show']);
 Route::post('musics', [MusicController::class, 'create']);
 Route::put('musics/{id}', [MusicController::class, 'update']);
 Route::delete('musics/{id}', [MusicController::class, 'delete']);

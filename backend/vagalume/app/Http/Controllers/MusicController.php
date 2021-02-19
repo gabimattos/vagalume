@@ -24,9 +24,22 @@ class MusicController extends Controller
         return response()->json(['musics'=>$musics], 200);
     }
 
-    public function show ($id){
-        $music = Music::find($id);
-        return response()->json(['music' => $music], 200);
+    public function show ($title){
+        $music = Music::find($title);
+
+        $client = new Client([
+            'base_uri' => 'https://api.vagalume.com.br'
+        ]);
+
+            $api_key=  env ('KEY');
+
+        $response = $client->request('GET', "search.artmus?apikey={$api_key}&q={$title}");
+        
+        $results = json_decode($response->getBody()->getContents());
+
+        return response()->json($results);
+
+       
     }
 
     public function update (Request $request, $id){
@@ -48,18 +61,6 @@ class MusicController extends Controller
         return response()->json(['musica deletada'], 200);
     }
 
-    public function searchMusic($title){
-        $client = new Client([
-            'base_uri' => 'https://api.vagalume.com.br'
-        ]);
-
-            $api_key=  env ('KEY');
-
-        $response = $client->request('GET', "search.artmus?apikey={$api_key}&q={$title}");
-        
-        $results = json_decode($response->getBody()->getContents());
-
-        return response()->json($results);
-    }
+ 
 
 }
