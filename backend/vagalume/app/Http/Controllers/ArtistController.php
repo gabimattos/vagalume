@@ -35,7 +35,7 @@ class ArtistController extends Controller
         $results = json_decode($response->getBody()->getContents());
 
         return response()->json(['artist' => $artist], 200);
-        return response()->json($results);
+        //return response()->json($results);
     }
 
     public function update (Request $request, $id){
