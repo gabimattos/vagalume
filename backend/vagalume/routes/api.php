@@ -20,7 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('artists', [ArtistController::class, 'index']);
-Route::get('artists/{id}', [ArtistController::class, 'show']);
+Route::get('artists/{name}', [ArtistController::class, 'show']);
 Route::post('artists', [ArtistController::class, 'create']);
 Route::put('artists/{id}', [ArtistController::class, 'update']);
 Route::delete('artists/{id}', [ArtistController::class, 'delete']);
