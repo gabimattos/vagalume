@@ -6,7 +6,7 @@
 - [Modelagem](#modelagem)
 - [Tecnologias](#tecnologias)
 - [API](#api)
-- [Ambiente](#ambiente)
+- [Ambiente de desenvolvimento](#ambiente-de-desenvolvimento)
 - [Servir o projeto](#servir-o-projeto)
 - [Créditos](#créditos)
 
