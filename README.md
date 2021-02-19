@@ -37,6 +37,7 @@ As entidades são: Album, Music e Artist.
 [Laravel](https://laravel.com/)
 
 ## API 
+<img src="/src/images/logo-vagalume.jpg">
 [Documentação da API](https://api.vagalume.com.br/) /
 [Site Vagalume](https://www.vagalume.com.br/)
 
