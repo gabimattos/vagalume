@@ -12,6 +12,8 @@ class ArtistController extends Controller
     public function create (Request $request){
         $artist = new Artist;
         $artist -> name = $request->name;
+        $artist -> url = $request->url;
+        $artist -> genre = $request->genre;
         $artist -> save();
         return response()->json(['artist' => $artist], 200);
     }
