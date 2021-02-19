@@ -40,6 +40,7 @@ As entidades são: Album, Music e Artist.
 [Site API Vagalume](https://api.vagalume.com.br/) /
 [Site Vagalume](https://www.vagalume.com.br/)
 
+![logo-vagalume](https://user-images.githubusercontent.com/50138800/108465434-c572e400-7260-11eb-84d6-6fc90297290b.jpg)
 
 
 #### Sobre o Vagalume
