@@ -25,9 +25,20 @@ class AlbumController extends Controller
         return response()->json(['albums'=>$albums], 200);
     }
 
-    public function show ($id){
-        $album = Album::find($id);
-        return response()->json(['album' => $album], 200);
+    public function show ($title){
+        $album = Album::find($title);
+
+        $client = new Client([
+            'base_uri' => 'https://api.vagalume.com.br'
+        ]);
+
+            $api_key=  env ('KEY');
+
+        $response = $client->request('GET', "search.alb?apikey={$api_key}&q={$title}");
+        
+        $results = json_decode($response->getBody()->getContents());
+
+        return response()->json($results);
     }
 
     public function update (Request $request, $id){
@@ -55,19 +66,4 @@ class AlbumController extends Controller
         return response()->json(['album deletado'], 200);
     }
 
-    public function searchAlbum($title){
-        $client = new Client([
-            'base_uri' => 'https://api.vagalume.com.br'
-        ]);
-
-        $api_key=  env('KEY');
-
-        $response = $client->request('GET', "search.alb?apikey={$api_key}&q={$title}");
-        
-        $results = json_decode($response->getBody()->getContents());
-
-        return response()->json($results);
-    }
-
-    // O Serviço dessa rota estava indisponível na ultima vez que testei
 }
