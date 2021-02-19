@@ -21,6 +21,12 @@ class Artist extends Model
         if($request->name){
             $this->name = $request->name;
         }
+        if($request->url){
+            $this->url = $request->url;
+        }
+        if($request->genre){
+            $this->genre = $request->genre;
+        }
         $this->save();
     }
 
