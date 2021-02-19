@@ -53,18 +53,6 @@ class ArtistController extends Controller
         return response()->json(['artista deletado'], 200);
     }
 
-    public function searchArtist($name){
-        $client = new Client([
-            'base_uri' => 'https://api.vagalume.com.br'
-        ]);
 
-            $api_key=  env ('KEY');
-
-        $response = $client->request('GET', "search.art?apikey={$api_key}&q={$name}");
-        
-        $results = json_decode($response->getBody()->getContents());
-
-        return response()->json($results);
-    }
 
 }
