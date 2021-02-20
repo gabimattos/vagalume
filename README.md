@@ -13,7 +13,7 @@
 ## Informações
 
 Esse repositório contém o trabalho final do PSI (Processo Seletivo Interno) para Tech Lead da EJCM. O trabalho consiste na criação de uma API Restful que contenha uma CRUD básica (index, show, create, update e delete) para pelo menos duas entidades que se relacionam, além disso é necessária que a aplicação consuma uma API Pública com autenticação associada a algum método da CRUD.
-Desta forma, eu escolhi a frmework Laravel e a API do Vagalume (mais informações ao longo do README).
+Desta forma, eu escolhi a framework Laravel e a API do Vagalume (mais informações ao longo do README).
 
 ## Modelagem
 
