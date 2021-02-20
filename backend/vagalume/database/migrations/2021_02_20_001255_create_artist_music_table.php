@@ -15,7 +15,15 @@ class CreateArtistMusicTable extends Migration
     {
         Schema::create('artist_music', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('artist_id')->nullable();
+            $table->foreignId('music_id')->nullable();
             $table->timestamps();
+        });
+
+        Schema::table('artist_music', function (Blueprint $table) {
+          
+            $table->foreign('artist_id')->references('id')->on('artists')->onDelete('set null');
+            $table->foreign('music_id')->references('id')->on('musics')->onDelete('set null');
         });
     }
 

@@ -67,7 +67,7 @@ class ArtistController extends Controller
 
     public function sellMusic($id, $music_id){
         $artist = Artist::find($id);
-        $artist->musics()->dettach($music_id);
+        $artist->musics()->detach($music_id);
 
         return response()->json('A música foi vendida.');
 
