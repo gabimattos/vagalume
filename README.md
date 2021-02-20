@@ -251,4 +251,4 @@ OBS: A URL de acesso aparece no terminal após rodar o comando acima.
 Para testar as rotas usamos a URL localhost:8000/nome-da-rota
 
 ## Créditos
-Gostaria de agradecer a Nayara Gomes e Mileny Loyolla por toda a ajuda e apoio ao longo de todo processo da execução do trabalho. Também gostaria de agradecer ao Danilo Collares e a EJCM, pois me baseei no slide "Ambiente Dev no Linux" para dar as melhores orientações de instalação de todo o ambiente no Linux e no documento "Guia de Instalação do Ambiente de Desenvolvimento - Windows" disponibilizado pela EJCM para dar as melhores orientações de instalação de todo o ambiente no Windows.
+Gostaria de agradecer a Nayara Gomes e Mileny Loyolla por toda a ajuda e apoio ao longo de todo processo da execução do trabalho. Também gostaria de agradecer ao Danilo Collares e a EJCM, pois me baseei no slide "Ambiente Dev no Linux" criado pelo Danilo para dar as melhores orientações de instalação de todo o ambiente no Linux e no documento "Guia de Instalação do Ambiente de Desenvolvimento - Windows" disponibilizado pela EJCM para dar as melhores orientações de instalação de todo o ambiente no Windows.
