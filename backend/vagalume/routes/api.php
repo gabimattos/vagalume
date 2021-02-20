@@ -33,6 +33,10 @@ Route::post('artists', [ArtistController::class, 'create']);
 Route::put('artists/{id}', [ArtistController::class, 'update']);
 Route::delete('artists/{id}', [ArtistController::class, 'delete']);
 
+//Rotas da tabela Pivot
+Route::post('writeMusic/{id, music_id}', [ArtistController::class, 'writeMusic']);
+Route::delete('sellMusic/{id, music_id}', [ArtistController::class, 'sellMusic']);
+
 Route::get('musics', [MusicController::class, 'index']);
 Route::get('musics/{title}', [MusicController::class, 'show']);
 Route::post('musics', [MusicController::class, 'create']);

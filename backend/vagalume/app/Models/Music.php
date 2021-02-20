@@ -30,4 +30,8 @@ class Music extends Model
     public function album(){
         return $this->belongsTo('App\Models\Album');
     }
+
+    public function artists(){
+        return $this->belongsToMany('App\Models\Artist');
+    }
 }

@@ -15,6 +15,8 @@ class ArtistController extends Controller
         $artist -> url = $request->url;
         $artist -> genre = $request->genre;
         $artist -> save();
+
+
         return response()->json(['artist' => $artist], 200);
     }
 
@@ -53,6 +55,22 @@ class ArtistController extends Controller
         Artist::destroy($id);
 
         return response()->json(['artista deletado'], 200);
+    }
+
+    public function writeMusic($id, $music_id){
+        $artist = Artist::find($id);
+        $artist->musics()->attach($music_id);
+
+        return response()->json('A música foi escrita.');
+
+    }
+
+    public function sellMusic($id, $music_id){
+        $artist = Artist::find($id);
+        $artist->musics()->dettach($music_id);
+
+        return response()->json('A música foi vendida.');
+
     }
 
 
